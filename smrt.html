@@ -33,37 +33,6 @@
 <script src="js/jquery.prettyPhoto.js"></script>
 <script src="js/jquery.flexslider.js"></script>
 <script src="js/jquery.custom.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-
-    $("#btn-blog-next").click(function () {
-      $('#blogCarousel').carousel('next')
-    });
-     $("#btn-blog-prev").click(function () {
-      $('#blogCarousel').carousel('prev')
-    });
-
-     $("#btn-client-next").click(function () {
-      $('#clientCarousel').carousel('next')
-    });
-     $("#btn-client-prev").click(function () {
-      $('#clientCarousel').carousel('prev')
-    });
-    
-});
-
- $(window).load(function(){
-
-    $('.flexslider').flexslider({
-        animation: "slide",
-        slideshow: true,
-        start: function(slider){
-          $('body').removeClass('loading');
-        }
-    });  
-});
-</script>
-
 </head>
 
 <body>
@@ -87,8 +56,9 @@ $(document).ready(function () {
             <div class="navbar hidden-phone">
                 <ul class="nav">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="topics.html">Topics</a></li>
+                    <li><a href="topics">Topics</a></li>
                 </ul>
+           
             </div>
 
              <!-- Mobile Nav
@@ -132,27 +102,10 @@ $(document).ready(function () {
     ================================================== --> 
     <div class="row"><!--Container row-->
 
-    <!-- Slider Carousel
-        ================================================== -->
-        <div class="span12">
-            <div class="flexslider">
-              <ul class="slides">
-                <li><a href=""><img src="img/stressed-man copy.jpg" alt="slider" /></a></li>
-                <li><a href=""><img src="img/keyboard.jpg" alt="slider" /></a></li>
-              </ul>
-            </div>
-        </div>
-
         <!-- Popular Topics
         ================================================== -->
         <div class="span12">
-            <h3>Popular Topics</h3>
-            <div class="list-group list-group-horizontal">
-                <a href="#" class="list-group-item active">SMRT</a>
-                <a href="#" class="list-group-item">GSS</a>
-                <a href="#" class="list-group-item">Haze</a>
-                <a href="#" class="list-group-item">ERP</a>
-            </div>
+            Mon can put your code here?
         </div><!--Close container row-->
 
         <!-- Post Complain
@@ -174,10 +127,10 @@ $(document).ready(function () {
         </section><!-- Close comments section-->
         </div><!--Close container row-->
 
-        <!--Popular Posts
+        <!--Related Newsfeed 
         ================================================== --> 
         <div class="span4 sidebar">
-            <h5 class="title-bg">Popular Complaints</h5>
+            <h5 class="title-bg">Related Newsfeed</h5>
             <ul class="popular-posts">
                 <li>
                     <a href="#"><img src="img/black_board.png" alt="Popular Post"></a>
@@ -208,7 +161,7 @@ $(document).ready(function () {
                         <div class="span6">
                             <span class="right">
                             <a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                            <a href="topics.html">Topics</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <a href="topics.hmtl">Topics</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
                             </span>
                         </div>
                     </div>
