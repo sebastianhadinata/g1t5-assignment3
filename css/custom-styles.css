@@ -516,7 +516,7 @@ ul.post-data li:last-child {padding-right: 0px;}
 / Sidebar
 **************************************/
 .sidebar input{width: 80%;}
-.sidebar h5 {margin-top: 40px;}
+.sidebar h5 {margin-top: 10px;}
 .sidebar ul.post-category-list,
 .sidebar .tab-content .tab-pane ul {margin:0px;}
 .sidebar ul.post-category-list li,
