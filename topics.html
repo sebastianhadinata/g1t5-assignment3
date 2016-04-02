@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Cow Meh Cow Moo</title>
@@ -33,11 +33,12 @@
 <script src="js/jquery.prettyPhoto.js"></script>
 <script src="js/jquery.quicksand.js"></script>
 <script src="js/jquery.custom.js"></script>
-
-
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
 </head>
 
-<body>
+<body ng-controller="topicController">
 	<div class="color-bar-1"></div>
     <div class="color-bar-2 color-bg"></div>
     
@@ -108,77 +109,16 @@
         <div class="span12 gallery">
             <div class="row clearfix">
                 <ul class="gallery-post-grid holder">
-
                     <!-- Gallery Item 1 -->
-                    <li  class="span4 gallery-item" data-id="id-1" data-type="illustration">
-                        <span class="gallery-hover-3col hidden-phone hidden-tablet">
+                    <li ng-repeat= "topic in topics" class="span4 gallery-item" data-id="id-1" data-type="illustration">
+                        <span class='gallery-hover-3col hidden-phone hidden-tablet'>
                             <span class="gallery-icons">
                                 <a href="img/train.jpg" class="item-zoom-link lightbox" title="Train Breakdown" data-rel="prettyPhoto"></a>
                                 <a href="smrt.html" class="item-details-link"></a>
                             </span>
                         </span>
-                        <a href="smrt.html"><img src="img/train.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="smrt.html">SMRT</a>For train breakdown complaints.</span>
-                    </li>
-
-                    <!-- Gallery Item 2 -->
-                    <li class="span4 gallery-item" data-id="id-2" data-type="illustration">
-                        <span class="gallery-hover-3col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                        </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-3col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">3 Color Poster Design</a>For a regional festival event.</span>
-                    </li>
-
-                    <!-- Gallery Item 3 -->
-                    <li class="span4 gallery-item" data-id="id-3" data-type="web">
-                        <span class="gallery-hover-3col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                        </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-3col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Ink Pen Illustration</a>Created for a best selling children's book.</span>
-                    </li>
-
-                    <!-- Gallery Item 4 -->
-                    <li class="span4 gallery-item" data-id="id-4" data-type="video">
-                        <span class="gallery-hover-3col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                        </span>
-                       <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-3col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Custom Illustration</a>For an international add campaign.</span>
-                    </li>
-
-                    <!-- Gallery Item 5 -->
-                    <li class="span4 gallery-item" data-id="id-5" data-type="web illustration">
-                        <span class="gallery-hover-3col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                        </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-3col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Icon Design</a>Classic retro style illustration.</span>
-                    </li>
-
-                    <!-- Gallery Item 6 -->
-                    <li class="span4 gallery-item" data-id="id-6" data-type="illustration design">
-                        <span class="gallery-hover-3col hidden-phone hidden-tablet">
-                            <span class="gallery-icons">
-                                <a href="img/gallery/gallery-img-1-full.jpg" class="item-zoom-link lightbox" title="Custom Illustration" data-rel="prettyPhoto"></a>
-                                <a href="gallery-single.htm" class="item-details-link"></a>
-                            </span>
-                        </span>
-                        <a href="gallery-single.htm"><img src="img/gallery/gallery-img-1-3col.jpg" alt="Gallery"></a>
-                        <span class="project-details"><a href="gallery-single.htm">Animation Cell</a>Creative storyboard illustration</span>
+                        <a href="smrt.html"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Gallery"></a>
+                        <span class="project-details"><a href="smrt.html">{{topic.title}}</a></span>
                     </li>
                 </ul>
             </div>
@@ -210,6 +150,6 @@
 
     <!-- Scroll to Top -->  
     <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
-    
+    <script src="js/populartopics.js"></script>
 </body>
 </html>
