@@ -127,6 +127,9 @@ $(function () {
                 title: topic,
                 dateTime: date
               });
+              
+            //go into the topic straight
+            window.location.href = "topic.html?title=" +topic;
             
         });
 

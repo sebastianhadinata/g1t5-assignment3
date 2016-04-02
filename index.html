@@ -153,7 +153,7 @@ $(document).ready(function () {
                 <a href="#" class="list-group-item" style="color: #d8450b">Haze</a>
                 <a href="#" class="list-group-item" style="color: #d8450b">ERP</a>
                 <a href="#" class="list-group-item" style="color: #d8450b">Glass Noodle</a>-->
-                <a href="#" class="list-group-item active" style="color: #d8450b" ng-repeat="topic in topics | reverse">{{topic.title}}</a>
+                <a href="topic.html?title={{ topic.title }}" class="list-group-item active" style="color: #d8450b" ng-repeat="topic in topics | reverse">{{topic.title}}</a>
             </div>
         </div><!--Close container row-->
 
@@ -163,15 +163,15 @@ $(document).ready(function () {
         <section class="comments">
                 <!-- Comment Form -->
                 <div class="comment-form-container">
-                    <h3>Start A New Complaint</h3>
-                    <form action="#" id="comment-form">
+                    <h3>Start A New Complaint Topic</h3>
+                    <!--<form action="" id="comment-form">-->
                         <textarea class="span7" id="topic-text"></textarea>
                         <div class="row">
                             <div class="span2">
-                                <input type="submit" class="btn btn-inverse" type="button" id="postTopic" value="Post My Complaint">
+                                <input type="submit" class="btn btn-inverse" type="button" id="postTopic" value="Post Topic">
                             </div>
                         </div>
-                    </form>
+                    <!--</form>-->
                 </div>
         </section><!-- Close comments section-->
         </div><!--Close container row-->
@@ -184,7 +184,7 @@ $(document).ready(function () {
                 <li>
                     <img src="img/black_board.png" alt="Popular topic">
                     <h7 id="recom1">Lorem ipsum dolor sit amet consectetur adipiscing elit</h7>
-                    <div style="color: #d8450b">Newly Updated</div>
+                    <div style="color: #d8450b">Newly Updated Today</div>
                 </li>
                 <li>
                     <img src="img/black_board.png" alt="Popular topic">
@@ -193,7 +193,7 @@ $(document).ready(function () {
                 <li>
                     <img src="img/black_board.png" alt="Popular topic">
                     <h7 id="recom3">Vivamus tincidunt sem eu magna</h7>
-                    <div style="color: #d8450b">Newly Updated</div>
+                    <div style="color: #d8450b">Newly Updated Today</div>
             </ul>
         </div>
     </div> <!-- End Container -->
