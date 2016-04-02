@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Cow Meh Cow Moo</title>
@@ -8,11 +8,11 @@
 <!-- CSS
 ================================================== -->
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-responsive.css">
 <link rel="stylesheet" href="css/jquery.lightbox-0.5.css">
 <link rel="stylesheet" href="css/flexslider.css" />
 <link rel="stylesheet" href="css/custom-styles.css">
+<link rel="stylesheet" href="css/bootstrap.css">
 
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -66,7 +66,7 @@ $(document).ready(function () {
 
 </head>
 
-<body>
+<body ng-controller="topicController">
 	<div class="color-bar-1"></div>
     <div class="color-bar-2 color-bg"></div>
     
@@ -148,10 +148,12 @@ $(document).ready(function () {
         <div class="span12">
             <h3>Popular Topics</h3>
             <div class="list-group list-group-horizontal">
-                <a href="#" class="list-group-item active">SMRT</a>
-                <a href="#" class="list-group-item">GSS</a>
-                <a href="#" class="list-group-item">Haze</a>
-                <a href="#" class="list-group-item">ERP</a>
+                <!--<a href="#" class="list-group-item active" style="color: #d8450b">SMRT</a>
+                <a href="#" class="list-group-item" style="color: #d8450b">GSS</a>
+                <a href="#" class="list-group-item" style="color: #d8450b">Haze</a>
+                <a href="#" class="list-group-item" style="color: #d8450b">ERP</a>
+                <a href="#" class="list-group-item" style="color: #d8450b">Glass Noodle</a>-->
+                <a href="#" class="list-group-item active" style="color: #d8450b" ng-repeat="topic in topics | reverse">{{topic.title}}</a>
             </div>
         </div><!--Close container row-->
 
@@ -161,12 +163,12 @@ $(document).ready(function () {
         <section class="comments">
                 <!-- Comment Form -->
                 <div class="comment-form-container">
-                    <h3>Post A New Complaint</h3>
+                    <h3>Start A New Complaint</h3>
                     <form action="#" id="comment-form">
-                        <textarea class="span7"></textarea>
+                        <textarea class="span7" id="topic-text"></textarea>
                         <div class="row">
                             <div class="span2">
-                                <input type="submit" class="btn btn-inverse" value="Post My Complaint">
+                                <input type="submit" class="btn btn-inverse" type="button" id="postTopic" value="Post My Complaint">
                             </div>
                         </div>
                     </form>
@@ -177,22 +179,21 @@ $(document).ready(function () {
         <!--Popular Posts
         ================================================== --> 
         <div class="span4 sidebar">
-            <h5 class="title-bg">Popular Complaints</h5>
+            <h5 class="title-bg">You Might Want to Complain About</h5>
             <ul class="popular-posts">
                 <li>
-                    <a href="#"><img src="img/black_board.png" alt="Popular Post"></a>
-                    <h6><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></h6>
-                    <em>Posted on 09/01/15</em>
+                    <img src="img/black_board.png" alt="Popular topic">
+                    <h7 id="recom1">Lorem ipsum dolor sit amet consectetur adipiscing elit</h7>
+                    <div style="color: #d8450b">Newly Updated</div>
                 </li>
                 <li>
-                    <a href="#"><img src="img/black_board.png" alt="Popular Post"></a>
-                    <h6><a href="#">Nulla iaculis mattis lorem, quis gravida nunc iaculis</a></h6>
-                    <em>Posted on 09/01/15</em>
+                    <img src="img/black_board.png" alt="Popular topic">
+                    <h7 id="recom2">Nulla iaculis mattis lorem, quis gravida nunc iaculis</h7>
+                    <div style="color: #d8450b">Newly Updated Today</div>
                 <li>
-                    <a href="#"><img src="img/black_board.png" alt="Popular Post"></a>
-                    <h6><a href="#">Vivamus tincidunt sem eu magna varius elementum maecenas felis</a></h6>
-                    <em>Posted on 09/01/15</em>
-                </li>
+                    <img src="img/black_board.png" alt="Popular topic">
+                    <h7 id="recom3">Vivamus tincidunt sem eu magna</h7>
+                    <div style="color: #d8450b">Newly Updated</div>
             </ul>
         </div>
     </div> <!-- End Container -->
@@ -220,6 +221,13 @@ $(document).ready(function () {
 
     <!-- Scroll to Top -->  
     <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
+    
+    <!-- JS Scripts -->
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+    <script src="js/recommendation.js"></script>
+    <script src="js/populartopics.js"></script>
     
 </body>
 </html>
