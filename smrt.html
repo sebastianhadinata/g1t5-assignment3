@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="postApp">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Cow Meh Cow Moo</title>
@@ -33,9 +33,16 @@
 <script src="js/jquery.prettyPhoto.js"></script>
 <script src="js/jquery.flexslider.js"></script>
 <script src="js/jquery.custom.js"></script>
+
+
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+<script type="text/javascript" src='js/angular.min.js'></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+  <script type="text/javascript" src='js/post.js'></script>
+
 </head>
 
-<body>
+<body ng-controller="PostController">
 	<div class="color-bar-1"></div>
     <div class="color-bar-2 color-bg"></div>
     
@@ -105,7 +112,7 @@
         <!-- Popular Topics
         ================================================== -->
         <div class="span12">
-            Mon can put your code here?
+   
         </div><!--Close container row-->
 
         <!-- Post Complain
@@ -116,16 +123,18 @@
                 <div class="comment-form-container">
                     <h3>Post A New Complaint</h3>
                     <form action="#" id="comment-form">
-                        <textarea class="span7"></textarea>
+                        <textarea name="Message" ng-model="data.message" class="span7"></textarea>
                         <div class="row">
                             <div class="span2">
-                                <input type="submit" class="btn btn-inverse" value="Post My Complaint">
+                                <input type="submit" ng-click="post($event)" class="btn btn-inverse" value="Post My Complaint">
                             </div>
                         </div>
                     </form>
                 </div>
         </section><!-- Close comments section-->
         </div><!--Close container row-->
+
+       
 
         <!--Related Newsfeed 
         ================================================== --> 
@@ -149,6 +158,16 @@
             </ul>
         </div>
     </div> <!-- End Container -->
+
+ <h2 class="title-bg">What othe people are saying?</h2>
+<div ng-repeat="article in articles">
+    <em> {{article.date}}</em> 
+    <h4 class="list-group-item-heading">{{article.content}}</h4>
+    <p> Like    | Comment
+    <hr>
+</div>
+
+   
 
     <!-- Footer Area
         ================================================== -->
