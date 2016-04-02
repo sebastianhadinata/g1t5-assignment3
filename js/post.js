@@ -14,9 +14,10 @@ angular.module('postApp', ['firebase'])
     var date = d.getFullYear()  + "-" + (d.getMonth()+1) + "-" + d.getDate() + " " +
 d.getHours() + ":" + d.getMinutes();
       
-      console.log("comment capture");  
-      console.log(date);
+     // console.log("comment capture");  
+     // console.log(date);
        myDataRef.child('haze').push({date: date, content: text});
+       $('#messageInput').val('');
     };
 
 
